@@ -1,0 +1,225 @@
+
+ <div  class="container-fluid m-t-50">
+	<div class="row sea">
+		<div class="container">
+			<h4 style="color: #337ab7">Search Your Resource :</h4>
+			<div class="col-sm-3">
+				<oi-select ng-model="search.primarySkills" multiple
+					oi-options="v for v in skills" placeholder="Skills Ex:html"
+					required> </oi-select>
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control"
+					ng-model="search.jobCategory" placeholder="job Category">
+			</div>
+			<div class="col-sm-2">
+				<input type="text" class="form-control"
+					ng-model="search.jobLocation" placeholder="Location">
+			</div>
+			<div class="col-sm-2">
+				<input type="text" class="form-control"
+					ng-model="search.totalExperience" placeholder="Experience">
+			</div>
+			<div class="col-sm-2">
+				<button type="submit" class="btn btn-primary"
+					ng-click="dynamicsearch(search.primarySkills,search.jobCategory,search.jobLocation,search.totalExperience)">
+					<i class="fa fa-search"></i>&nbsp;Search
+				</button>
+			</div>
+		</div>
+	</div>
+              
+              
+            <!--  New Template --> 
+            
+            
+      <div class="container">
+		<a class="btn btn-primary pull-right" ui-sref="RA.addresource"><i
+			class="fa fa-plus"></i>&nbsp;&nbsp;Add </a> <br>
+
+
+			<div class="col-sm-3">		
+						
+			<div>
+				<uib-accordion close-others="oneAtATime">
+                <div uib-accordion-group class="panel-default"
+					is-open="status.Skills">
+					<uib-accordion-heading> Skills <i
+						class="pull-right glyphicon"
+						 ng-class="{'glyphicon glyphicon-minus': status.Skills, 'glyphicon glyphicon-plus': !status.open}" ng-click="skillfunc()"></i>
+					</uib-accordion-heading>
+					<ul class="list-group" ng-repeat="s in skills">
+					   <input type="checkbox" checklist-model="search1.skills" checklist-value="s.name"> {{s.name}} &nbsp;
+					</ul>
+				</div>
+					<div uib-accordion-group class="panel-default" is-open="status.Job ">
+					<uib-accordion-heading> Job Category <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.Job , 'glyphicon glyphicon-plus': !status.open}" ng-click="jobcategoryfunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="c in Jobc">
+					 <input type="checkbox" checklist-model="search1.jobCategory" checklist-value="c.jobCategory"> {{c.jobCategory}} &nbsp;
+					</ul>
+				</div>
+				<div uib-accordion-group class="panel-default"
+					is-open="status.Location">
+					<uib-accordion-heading> Location<i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.Location, 'glyphicon glyphicon-plus': !status.open}" ng-click="locationfunc()"></i>
+					</uib-accordion-heading>
+
+					<ul class=" list-group" ng-repeat="x in location">
+					    <input type="checkbox" checklist-model="search1.city" checklist-value="x.location"> {{x.location}} &nbsp;
+					</ul>
+				</div>			
+				<div uib-accordion-group class="panel-default"
+					is-open="status.Experience">
+					<uib-accordion-heading> Experience <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.Experience, 'glyphicon glyphicon-plus': !status.open}" ng-click="experiencefunc()"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="e in experience">
+					<input type="checkbox" checklist-model="search1.totalExperience" checklist-value="e.experience"> {{e.experience}}years &nbsp;
+				
+					</ul>
+				</div>
+			 	<div uib-accordion-group class="panel-default"
+					is-open="status.company">
+					<uib-accordion-heading> Top Vendors <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.company, 'glyphicon glyphicon-plus': !status.open}"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="tc in company">
+						<input type="checkbox" checklist-model="search1.vendors" checklist-value="tc"> {{tc}} &nbsp;
+						
+					</ul>
+				</div>
+				<div uib-accordion-group class="panel-default"
+					is-open="status.company1">
+					<uib-accordion-heading> Budget <i
+						class="pull-right glyphicon"
+						ng-class="{'glyphicon glyphicon-minus': status.company, 'glyphicon glyphicon-plus': !status.open}"></i>
+					</uib-accordion-heading>
+					<ul class=" list-group" ng-repeat="tc in company">
+						<input type="checkbox" checklist-model="search1.budget" checklist-value="tc"> {{tc}} &nbsp;
+						
+					</ul>
+				</div>
+				<br>
+				<center>
+					<button type="submit" class="btn primary">Clear filters</button>
+					<button type="submit" class="btn primary" ng-click="search1(search1)">Submit</button>
+				</center>
+			</div>
+		</div>
+
+
+			
+			<div class="col-sm-8">
+				<div ng-repeat="resource in resourcelist" class="box">
+					<a class=" pull-right edit-box"
+						ui-sref="vendor.updateresource({resourceId:resource._id})"><i
+						class="fa fa-edit " aria-hidden="true"></i></a>
+
+					<div class="header-box">
+						<p>
+							<a ui-sref="vendor.resourcesummary({resourceId:resource._id})">
+								{{resource.jobCategory}}<span>-{{resource.currentLocation}}({{resource.yearsOfExperience}}years-{{resource.monthsOfExperience}}months)</span>
+							</a>
+						</p>
+					</div>
+				<div class="row">
+					<div class="companyName-box col-md-8">
+						<p>{{resource.companyName}}
+						<p>
+					</div>
+					<div class="col-md-4">						
+					<span style="font-size:16px; color:#777;">&#x20B9;&nbsp;{{resource.budget}}</span>
+					</div>	
+					</div>
+					
+					
+					<div class="description-box">
+						<p>
+							<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;{{resource.firstName}}
+						</p>
+					</div>
+					<div class="description-box">
+						<p>
+							<span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;{{resource.emailId}}&nbsp;&nbsp;<i
+								class="fa fa-mobile mobil" aria-hidden="true"></i>&nbsp;{{resource.mobileNumber}}
+						</p>
+					</div>
+					<div class="description-box">
+						<p>{{resource.description}}</p>
+					</div>
+					<div class="description-box">
+						<p>
+							<i class="glyphicon glyphicon-calendar"></i>{{resource.availability}}
+						</p>
+					</div>
+					<div class="Skills-box">
+						<p>
+							Skills:{{resource.primarySkills.toLowerCase()
+							}},{{resource.secondarySkills.toLowerCase() }}<a
+								class=" btn pull-right"
+								ng-click="requirementsearch1(resource.primarySkills,resource.jobCategory,resource.currentLocation,resource.totalExperience)">
+								Search requirement </a>
+						</p>
+					</div>
+					<div class="Skills-box">
+						<p>
+							Status <a type="button" class="btn btn-sm butn"
+								ng-click="statusResource(resource)">{{resource.status}}</a>
+							&nbsp;&nbsp;SoftLock&nbsp; :<a
+								class="btn btn-sm btn-success butn"
+								ng-click="softlockResource(resource)">{{resource.softLock}}</a>
+							&nbsp;&nbsp;HardLock &nbsp;:<a class="btn btn-sm btn-danger butn"
+								ng-click="hardlockResource(resource)">{{resource.hardLock}}</a>
+								 <a type="button" class="btn btn-sm btn-primary" style="margin-left: 30px;" data-toggle="modal" data-target="#myModal" ng-click="send_id(resource._id)"><i class="fa fa-upload"></i>&nbsp;Upload Resume</a>
+						</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+              
+      
+      
+      
+          <div class="container">
+ 
+  <!-- Trigger the modal with a button -->
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Upload Resume</h4>
+        </div>
+        <div >
+        <div class="modal-body">
+            <div class="form-group">
+                  <label class="control-label" >Upload Resume</label>
+                     <input type="file"  name="file" file-model = "myFile" class="form-control"/>        				
+                  <span class="help-block" ng-show="frm.companyName.$dirty && frm.companyName.$invalid">Please select company Name..!!</span>
+                </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           <button type="button" class="btn btn-default" ng-click ="uploadFile(r_id,myFile )" data-dismiss="modal" >Submit</button>
+        </div>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+</div>

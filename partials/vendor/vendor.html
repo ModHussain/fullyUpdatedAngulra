@@ -1,0 +1,58 @@
+
+<!-- <nav class="navbar navbar-inverse bg-color">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar"> -->
+     <!--  <ul class="nav navbar-nav">
+        <li ui-sref-active="active"><a ui-sref=".dashboard">Dashboard</a></li>
+        
+        <li ng-show="{{all_users_type}}" ui-sref-active="active"><a ui-sref=".alluserlist">All User</a></li>
+        <li ui-sref-active="active"><a ui-sref=".resourcelist">Resource</a></li>
+        <li ui-sref-active="active"><a ui-sref=".postresource">Post Resource</a></li>
+        <li ui-sref-active="active"><a ui-sref=".resourceMap">Resource Map</a></li>       
+        <li ui-sref-active="active"><a ui-sref="vendor.requirementlist">All Requirements</a></li>
+               
+        <li ui-sref-active="active"><a ui-sref="vendor.plan">Plan Management</a></li>
+      </ul> -->
+<!--        <ul class="nav navbar-nav" >
+        <li ng-repeat="x in menu"><a ui-sref="{{x.uisref}}">{{x.headerName}}</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li  ui-sref-active="active"><a ui-sref="vendor.vendorlist({userId:id})"><span class="	fa fa-user-circle-o"></span>&nbsp;{{model}} Profile</a></li>
+      <li class="m-t-20"> 
+      <select class="form-control" ng-options="reg for reg in register" ng-model="registerData" ng-change="dataregister()">
+		<option value="" disabled="">Switch To</option>
+	  </select>
+	  </li>
+        <li ng-controller="LoginCtrl"><a href="#" ng-click="logout();"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<nav class="navbar navabar-default  navbar-fixed-top" id="header">
+  <div class="container">
+    <div class="navbar-header">
+   
+      <a class="navbar-brand headername"><i class="fa fa-users headername" aria-hidden="true"></i>&nbsp;&nbsp;Resource Adda</a>
+    </div>
+   
+    <ul class="nav navbar-nav pull-right">
+       <li ui-sref-active="active" ng-repeat="x in menu"><a class="headername" ui-sref="{{x.uisref}}">{{x.headerName}}</a></li>
+       <li ui-sref-active="active"><a class="headername" ui-sref="vendor.customerrequested">Requested Resources</a></li>
+       <li  ui-sref-active="active"><a class="headername"  ng-click="PlanGetById()" ui-sref=".subscription">Subscription</a></li> 
+       <li  ui-sref-active="active" ><a style="color:#f8f8f8" ui-sref="vendor.vendorlist({userId:id})"><span class="	fa fa-user-circle-o "></span>&nbsp;{{model}} Profile</a></li>
+       <li ng-controller="LoginCtrl"><a class="headername" href="#" ng-click="logout();"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+   
+  </div>
+</nav>
+<div ui-view autoscroll="false" class="relate"> </div>
+
+<foot class="topfoot" ></foot>

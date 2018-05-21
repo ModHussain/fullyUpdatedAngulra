@@ -1,0 +1,168 @@
+<!--  <div class="container m-t-50">
+<form class="form-inline text-center">
+          			
+  				<div class="table-responsive m-t-30">
+  					<table class="table text-center">
+					    <thead>
+					      <tr>
+					        <th>S.No</th>
+					        <th>Enroll Name</th>
+					        <th>Registration Type</th>
+					        <th>Registration Date</th>
+					        <th>Email</th>
+					        <th>Mobile No</th>
+					        <th>City</th>
+					        <th>Edit</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr ng-repeat="x in details">
+					        <td>{{$index+1}}</td>
+					        <td>{{x.companyName}}</td>
+					        <td>{{x.registrationType}}</td>
+					        <td>{{x.registeredDate | date:'dd-MM-yyyy'}}</td>
+					        <td>{{x.mailId}}</td>
+					        <td>{{x.mobile}}</td>
+					        <td>{{x.city}}</td>
+					        <td><a type="button" class="btn btn-primary butn" ui-sref="RA.updateRA({userId: x._id})"><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+										      
+						  </tr>
+					    </tbody>
+  					</table>
+  				</div>
+  				<div class="row m-b-20">
+  				<div class="col-md-6">
+  					<button type="button" class="btn btn-primary butn">Prev</button> 1/13 <button type="button" class="btn btn-primary butn">Next</button>
+  				</div>
+  				<div class="col-md-6">
+  					<button type="button" class="btn btn-primary butn pull-right" ui-sref="RA.addRA"> Add </button>
+  				</div>
+  				</div>
+  			</div>-->
+  			<br>
+  		<!-- 	<div class="container m-t-30">
+  			<div class="row">
+  			 <div class="col-sm-3"></div>
+  			 <div class="col-sm-7">
+				 <div class="panel panel-default trans">
+				 <div class="" style="background-color:rgba(0,0,0,0.1)"><h3 class="text-center" style="color:#000">Vendor Name:&nbsp;{{registration.companyName}}</h3></div>
+				 <hr class="hor" size=4 color="Red">
+				  <div class="panel-body">
+				  <div class="row">
+				  <div class="col-sm-2"></div>
+				  <div class="col-sm-9">
+				   <div class="row">
+						  <div class="col-sm-5"><label class="labl"><i class="fa fa-user-circle-o"></i>&nbsp;UserName</label></div>
+						  <div class="col-sm-1">:</div>
+						  <div class="col-sm-6"><p class="val">{{registration.contactPerson}}</p></div>
+				  </div><br>
+				  <div class="row">
+						  <div class="col-sm-5"><label class="labl"><i class="fa fa-newspaper-o"></i>&nbsp;RegistrationType</label></div>
+						  <div class="col-sm-1">:</div>
+						  <div class="col-sm-6"><p class="val">{{registration.registrationType}}</p></div>
+				  </div><br>
+				   <div class="row">
+						  <div class="col-sm-5"><label class="labl"> <i class="fa fa-institution"></i>&nbsp;Company Name</label></div>
+						  <div class="col-sm-1">:</div>
+						  <div class="col-sm-6"><p class="val">{{registration.companyName}}</p></div>
+				  </div><br>
+				   <div class="row">
+						  <div class="col-sm-5"><label class="labl"><i class="fa fa-vcard-o"></i>&nbsp;Company Type</label></div>
+						  <div class="col-sm-1">:</div>
+						  <div class="col-sm-6"><p class="val">{{registration.companyType}}</p></div>
+				  </div><br>
+				   <div class="row">
+						  <div class="col-sm-5"><label class="labl"><i class="fa fa-envelope"></i>&nbsp;E-mail Id</label></div>
+						  <div class="col-sm-1">:</div>
+						  <div class="col-sm-6"><p class="val">{{registration.mailId}}</p></div>
+				  </div><br>
+				   <div class="row">
+						  <div class="col-sm-5"><label class="labl"><i class="glyphicon glyphicon-phone"></i>&nbsp;Mobile Number</label></div>
+						  <div class="col-sm-1">:</div>
+						  <div class="col-sm-6"><p class="val">{{registration.mobile}}</p></div>
+				  </div><br>
+				   <div class="row">
+						  <div class="col-sm-5"><label class="labl"><i class="glyphicon glyphicon-globe"></i>&nbsp;Company Website</label></div>
+						  <div class="col-sm-1">:</div>
+						  <div class="col-sm-6"><p class="val">{{registration.url}}</p></div>
+				  </div><br>
+				   <div class="row">
+						  <div class="col-sm-5"><label class="labl"><i class="	glyphicon glyphicon-map-marker"></i>&nbsp;Location</label></div>
+						  <div class="col-sm-1">:</div>
+						  <div class="col-sm-6"><p class="val">{{registration.city}}</p></div>
+				  </div>
+			
+				  </div>
+				  <div class="col-sm-1"></div>
+				  </div>
+				  
+				  </div>
+				  <div class="panel-footer">
+				  <button type="button" class="btn btn-danger" ui-sref="vendor.resourcelist">
+				<i class="	glyphicon glyphicon-share"></i>&nbsp;Go Back
+			</button>
+				 <a type="button" class="btn btn-primary  text-center" ui-sref="vendor.updatepro({userId:id})"> Edit&nbsp;<i class="fa fa-pencil" aria-hidden="true"></i></a>
+				  </div>
+				</div>
+				</div>
+				</div>
+				</div> -->     
+		 <div class="container m-t-30">
+  			<div class="row">
+  			 <div class="col-sm-3"></div>
+  			 <div class="col-sm-6">
+  			 <div class="well">
+  			 <div class="row">
+  			 <div class="col-sm-3">
+  			 <a type="button" class="btn " ui-sref="vendor.resourcelist">
+				<i class="	glyphicon glyphicon-share"></i>&nbsp;Back
+			</a>
+			<a type="button" class="btn pull-right text-center invi"  ui-sref="vendor.dashboard"><i class="glyphicon glyphicon-home" aria-hidden="true"></i>&nbsp;Home</a>
+  			 </div>
+  			 <div class="col-sm-7"><center><h3><i class="fa fa-institution"></i>&nbsp;{{registration.companyName}}</h4></center></div>
+  			 <div class="col-sm-2">
+  			 <a type="button" class="btn text-center hiden"  ui-sref="vendor.dashboard">&nbsp;<i class="glyphicon glyphicon-home" aria-hidden="true"></i>&nbsp;Home</a>
+  			 </div>
+  			 </div>
+  			 </div>
+  			 <div class="borders">
+  				<div class="row">
+  			 <div class="col-sm-4 bor">
+  			 
+  			 <h4 class="re">Personal Info</h4>
+  			 </div>
+  		        <div class="col-sm-8 pad">
+  				<h5><i class="fa fa-user-circle-o"></i>&nbsp;<span class="orange">Username</span>:&nbsp;{{registration.contactPerson}}</h4> 
+  				<h5><i class="glyphicon glyphicon-phone"></i>&nbsp;<span class="orange">Mobile Number</span>:&nbsp;{{registration.mobile}}</h5>
+  				<h5><i class="fa fa-envelope"></i>&nbsp;<span class="orange"> EmailId</span>: &nbsp;{{registration.mailId}}</h5>
+  				<h5><i class="glyphicon glyphicon-map-marker"></i>&nbsp;<span class="orange">Location</span>:&nbsp;{{registration.city}}</h5>
+  				
+  				</div></div>
+  				<hr>
+  				
+  				<div class="row">
+  			 <div class="col-sm-4 bor">
+  			 
+  			 <h4 class="re">Company Info</h4>
+  			 </div>
+  		        <div class="col-sm-8 pad">
+  				<h5><i class="fa fa-institution"></i>&nbsp;<span class="orange">Company Name</span>:&nbsp;{{registration.companyName}}</h4> 
+  				<h5><i class="fa fa-newspaper-o"></i>&nbsp;<span class="orange">Registration Type </span>: &nbsp;{{registration.registrationType}}</h5>
+  				<h5><i class="fa fa-vcard-o"></i>&nbsp;<span class="orange">Company Type</span>:&nbsp;{{registration.companyType}}</h5>
+  				<h5><i class="glyphicon glyphicon-globe"></i>&nbsp;<span class="orange">Company Website</span>:&nbsp;{{registration.url}}</h5>
+  				</div></div>
+  				<hr>
+  				<div class="panel-footer">
+				 
+				 <a type="button" class="btn text-center" ui-sref="vendor.updatepro({userId:id})"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Edit</a>
+				  </div>
+  				
+  			 </div>
+  			 
+  			 </div>
+  			 <div class="col-sm-3"></div>
+  			 </div>
+  			 </div><br>
+
+  			
+  			

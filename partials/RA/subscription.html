@@ -1,0 +1,70 @@
+<div class="container plan" style="margin-top: 10px;">
+
+	<div class="panel col-md-5">
+		<div class="panel-heading" 
+			style="background-color: #777f7fd9 !important; padding: 1px 15px !important; color: white !important">
+			<center>
+				<h3>Your Subscription-Plan</h3>
+			</center>
+		</div>
+		<div class="panel-body">
+			<div class=" col-md-offset-3 col-md-">
+				<table>
+					<tr>
+						<th>Month :</th>
+						<td>{{planlist.month}}</td>
+					</tr>
+				
+					<tr>
+						<th>Rate :</th>
+						<td>{{planlist.rate}}</td>
+					</tr>
+					<tr>
+						<th>Email :</th>
+						<td>{{planlist.email}}</td>
+					</tr>
+					<tr>
+						<th>CV :</th>
+						<td>{{planlist.cv}}</td>
+					</tr>
+					<tr>
+						<th>Hot Vacancy :</th>
+						<td>{{planlist.vacancy}}</td>
+					</tr>
+
+				</table>
+				<br />
+				<br />
+				<div class="col-md-1 col-md-offset-1">
+					<a type="button" ui-sref="RA.buynow" class="btn btn-primary">Change
+						Plan</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="w3-container col-md-offset-3 col-md-3">
+		<div class="w3-card-3" style="width: 100%;">
+			<header class="w3-container" style="background-color:#777f7fd9 !important; color: white !important; padding: 5px; !important">
+				<h4>Your Cart</h4>
+			</header>
+			<div class="w3-container">
+				<label>Hot Vacancy:</label> <span>{{planlist.vacancy}}</span><br />
+				<label>Rate:</label> <span> {{planlist.rate}}</span>
+				<hr>
+			</div>
+			<footer class="w3-container" style="background-color:#777f7fd9 !important; color: white !important; padding: 15px; !important">
+				<div class="col-md-6">
+					<h5 style="margin-top:-5px;">Total:</h5>
+				</div>
+				<div class="col-md-6" style="margin-top:-7px;">
+					<span> {{planlist.rate}}</span>
+				</div>
+			</footer>
+		</div>
+	</div>
+</div>
+
+
+
+
